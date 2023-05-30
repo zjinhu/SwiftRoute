@@ -1,0 +1,6 @@
+framework module SwiftRoute {
+  umbrella header "SwiftRoute-umbrella.h"
+
+  export *
+  module * { export * }
+}

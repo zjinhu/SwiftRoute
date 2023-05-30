@@ -1,0 +1,53 @@
+PODS:
+  - SnapKit (5.6.0)
+  - SwiftBrick (2.4.1):
+    - SwiftBrick/BaseCell (= 2.4.1)
+    - SwiftBrick/BaseVC (= 2.4.1)
+    - SwiftBrick/Extensions (= 2.4.1)
+    - SwiftBrick/SwiftUI (= 2.4.1)
+    - SwiftBrick/Util (= 2.4.1)
+    - SwiftBrick/ViewFactory (= 2.4.1)
+  - SwiftBrick/BaseCell (2.4.1):
+    - SwiftBrick/Extensions
+  - SwiftBrick/BaseVC (2.4.1):
+    - SwiftBrick/BaseCell
+    - SwiftBrick/Extensions
+    - SwiftBrick/Util
+  - SwiftBrick/Extensions (2.4.1):
+    - SwiftBrick/Util
+  - SwiftBrick/SwiftUI (2.4.1):
+    - SwiftBrick/BaseVC
+    - SwiftBrick/Extensions
+  - SwiftBrick/Util (2.4.1)
+  - SwiftBrick/ViewFactory (2.4.1):
+    - SwiftBrick/Extensions
+    - SwiftBrick/Util
+  - SwiftRoute (0.1.0):
+    - SwiftRoute/Protocol (= 0.1.0)
+    - SwiftRoute/Tools (= 0.1.0)
+  - SwiftRoute/Protocol (0.1.0):
+    - SwiftRoute/Tools
+  - SwiftRoute/Tools (0.1.0)
+
+DEPENDENCIES:
+  - SnapKit
+  - SwiftBrick
+  - SwiftRoute (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+    - SwiftBrick
+
+EXTERNAL SOURCES:
+  SwiftRoute:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftBrick: 1acc9198481860dead9e24280150f7855b454866
+  SwiftRoute: 4d4056cc0cd85582aac0cc36608134f18940f569
+
+PODFILE CHECKSUM: 8a74362c8196f989f131ff672de2c9142518e02b
+
+COCOAPODS: 1.12.1
