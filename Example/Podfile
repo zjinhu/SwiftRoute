@@ -6,4 +6,5 @@ target 'Example' do
   pod 'SwiftRoute', :path => '../'
   pod 'SwiftBrick'
   pod 'SnapKit'
+  pod 'SwiftShow'
 end

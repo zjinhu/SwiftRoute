@@ -1,17 +1,16 @@
 //
-//  TestAViewController.swift
+//  TestBViewController.swift
 //  Example
 //
-//  Created by iOS on 2023/5/26.
+//  Created by iOS on 2023/5/30.
 //
 
 import UIKit
-import Foundation
 import SwiftRoute
 import SwiftBrick
 import SnapKit
 import SwiftShow
-class TestAViewController: ViewController {
+class TestBViewController: ViewController {
 
     var titleName : String?
     var str : String?
@@ -66,10 +65,9 @@ class TestAViewController: ViewController {
             make.top.equalToSuperview().offset(60)
         }
     }
-
 }
 
-extension TestAViewController: Routable {
+extension TestBViewController: Routable {
     static func callStaticFunc(params: [String : Any], callback: (Any?) -> Void) {
         debugPrint("1212")
         callback("111")
@@ -85,7 +83,7 @@ extension TestAViewController: Routable {
 
     // 返回一个路由协议的实例
     static func initVC(params: [String : Any]) -> Routable {
-        let vc = TestAViewController()
+        let vc = TestBViewController()
         vc.dic = params
         return vc
     }
@@ -97,9 +95,9 @@ extension TestAViewController: Routable {
 
 public extension Router {
     @objc
-    func registerAController() -> RoutePath {
-        return RoutePath(path: "push://xxx",
-                          routerClass: TestAViewController.self)
+    func registerBController() -> RoutePath {
+        return RoutePath(path: "app://xxx",
+                          routerClass: TestBViewController.self)
     }
 }
 

@@ -23,21 +23,29 @@ PODS:
     - SwiftBrick/Extensions
     - SwiftBrick/Util
   - SwiftRoute (0.1.0):
+    - SwiftRoute/Delegate (= 0.1.0)
     - SwiftRoute/Protocol (= 0.1.0)
     - SwiftRoute/Tools (= 0.1.0)
+  - SwiftRoute/Delegate (0.1.0)
   - SwiftRoute/Protocol (0.1.0):
     - SwiftRoute/Tools
   - SwiftRoute/Tools (0.1.0)
+  - SwiftShow (0.7.6):
+    - SwiftShow/Class (= 0.7.6)
+  - SwiftShow/Class (0.7.6):
+    - SnapKit
 
 DEPENDENCIES:
   - SnapKit
   - SwiftBrick
   - SwiftRoute (from `../`)
+  - SwiftShow
 
 SPEC REPOS:
   trunk:
     - SnapKit
     - SwiftBrick
+    - SwiftShow
 
 EXTERNAL SOURCES:
   SwiftRoute:
@@ -46,8 +54,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftBrick: 1acc9198481860dead9e24280150f7855b454866
-  SwiftRoute: 4d4056cc0cd85582aac0cc36608134f18940f569
+  SwiftRoute: 12920951e7346e5a60e1e0d4bb4123d34c41f1fd
+  SwiftShow: 5cd3fa366dd87d330ab2a7c0cfee167ccc924a3b
 
-PODFILE CHECKSUM: 8a74362c8196f989f131ff672de2c9142518e02b
+PODFILE CHECKSUM: 836526d64a3d92f4198b68bb604eceb30f3964d3
 
 COCOAPODS: 1.12.1

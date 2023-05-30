@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		813D44042A25A0B000BA10CB /* TestAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813D44032A25A0B000BA10CB /* TestAViewController.swift */; };
 		813D44062A25A31F00BA10CB /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813D44052A25A31F00BA10CB /* SwiftUIView.swift */; };
+		813D44082A25F44900BA10CB /* TestBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813D44072A25F44900BA10CB /* TestBViewController.swift */; };
 		819E404B2A0CD8CA00D1F708 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819E404A2A0CD8CA00D1F708 /* AppDelegate.swift */; };
 		819E404D2A0CD8CA00D1F708 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819E404C2A0CD8CA00D1F708 /* SceneDelegate.swift */; };
 		819E404F2A0CD8CA00D1F708 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819E404E2A0CD8CA00D1F708 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 		35397A8E2369946AA57326FE /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		813D44032A25A0B000BA10CB /* TestAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAViewController.swift; sourceTree = "<group>"; };
 		813D44052A25A31F00BA10CB /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		813D44072A25F44900BA10CB /* TestBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBViewController.swift; sourceTree = "<group>"; };
 		819E40472A0CD8CA00D1F708 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		819E404A2A0CD8CA00D1F708 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		819E404C2A0CD8CA00D1F708 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				819E404E2A0CD8CA00D1F708 /* ViewController.swift */,
 				813D44052A25A31F00BA10CB /* SwiftUIView.swift */,
 				813D44032A25A0B000BA10CB /* TestAViewController.swift */,
+				813D44072A25F44900BA10CB /* TestBViewController.swift */,
 				819E40502A0CD8CA00D1F708 /* Main.storyboard */,
 				819E40532A0CD8CB00D1F708 /* Assets.xcassets */,
 				819E40552A0CD8CB00D1F708 /* LaunchScreen.storyboard */,
@@ -215,6 +218,7 @@
 				813D44042A25A0B000BA10CB /* TestAViewController.swift in Sources */,
 				819E404F2A0CD8CA00D1F708 /* ViewController.swift in Sources */,
 				819E404B2A0CD8CA00D1F708 /* AppDelegate.swift in Sources */,
+				813D44082A25F44900BA10CB /* TestBViewController.swift in Sources */,
 				819E404D2A0CD8CA00D1F708 /* SceneDelegate.swift in Sources */,
 				813D44062A25A31F00BA10CB /* SwiftUIView.swift in Sources */,
 			);

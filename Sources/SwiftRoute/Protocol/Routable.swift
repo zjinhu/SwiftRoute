@@ -8,10 +8,28 @@
 import Foundation
 import SafariServices
 public protocol Routable{
-    ///Initialize the current class
+    
+    /// Initialize the current class
+    /// - Parameter params: Parameters required to create UIViewController
+    /// - Returns: protocol type
     static func initVC(params: [String: Any]) -> Routable
-    ///Custom route handling
+
+    /// Custom route handling
+    /// - Parameter path: registered path
     func openRouter(path: String)
+    
+    /// Call the static function method
+    /// - Parameters:
+    /// - params: the parameters that need to be passed
+    /// - callback: closure callback
+    static func callStaticFunc(params: [String : Any], callback: (Any?) -> Void)
+    
+    /// Call the instance function method
+    /// - Parameters:
+    /// - params: the parameters that need to be passed
+    ///   - callback: closure callback
+    func callInstanceFunc(params: [String : Any], callback: (Any?) -> Void)
+
 }
  
 public extension Routable {
@@ -35,6 +53,16 @@ public extension Routable {
             let safariController = SFSafariViewController(url: URL(string: path)!)
             UIViewController.currentViewController()?.present(safariController, animated: true, completion: nil)
         }
+    }
+    
+    ///This function can be implemented on its own
+    static func callStaticFunc(params: [String : Any], callback: (Any?) -> Void) {
         
     }
+    
+    ///This function can be implemented on its own
+    func callInstanceFunc(params: [String : Any], callback: (Any?) -> Void) {
+        
+    }
+
 }

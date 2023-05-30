@@ -44,6 +44,10 @@
     {
       "name": "Tools",
       "source_files": "Sources/SwiftRoute/Tools/**/*"
+    },
+    {
+      "name": "Delegate",
+      "source_files": "Sources/SwiftRoute/Delegate/**/*"
     }
   ],
   "swift_version": "5.5"

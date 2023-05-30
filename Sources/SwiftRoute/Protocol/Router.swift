@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+/// 扩展路由类,添加一个以register开头的注册函数,返回一个RoutePath对象
+/// Extend the routing class, add a registration function starting with register, and return a RoutePath object
 public class Router: NSObject{
     public static let shared = Router()
     private override init(){
@@ -38,9 +40,9 @@ public class Router: NSObject{
         }
     }
     
-    private func getRoutable(_ urlString: String, params: [String: Any]?) -> Routable? {
+    private func getRoutableVC(_ urlString: String, params: [String: Any]?) -> Routable? {
         guard let url = URL(string: urlString), let urlScheme = url.scheme else { return nil }
- 
+        
         var routerModel: AnyClass? = routers[urlScheme]
         
         if let _ = routerModel {
@@ -57,6 +59,63 @@ public class Router: NSObject{
         }
         return nil
     }
+    
+}
+
+extension Router {
+    
+    /// Call the function of the instance object
+    /// - Parameters:
+    /// - instance: Routable
+    /// - params: The parameter dictionary that needs to be passed to call the function
+    /// - callback: closure callback
+    public func callInstanceFunc(_ instance: Routable,
+                                 params: [String: Any] = [:],
+                                 callback: ((Any?) -> Void)? = nil){
+        let completion = callback ?? { _ in }
+        instance.callInstanceFunc(params: params, callback: completion)
+    }
+    
+    /// Call the function of the instance object
+    /// - Parameters:
+    /// - path: the path of the registered instance (used to create the instance)
+    /// - params: The parameter dictionary that needs to be passed to call the function
+    /// - callback: closure callback
+    public func callInstanceFunc(_ path: String,
+                                 params: [String: Any] = [:],
+                                 callback: ((Any?) -> Void)? = nil){
+        guard let routable = getRoutableVC(path, params: params) else {
+            return
+        }
+        let completion = callback ?? { _ in }
+        routable.callInstanceFunc(params: params, callback: completion)
+    }
+    
+    /// Call the function of the static object
+    /// - Parameters:
+    /// - path: the path of the registered instance (used to create the instance)
+    /// - params: The parameter dictionary that needs to be passed to call the function
+    /// - callback: closure callback
+    public func callStaticFunc(_ path: String,
+                               params: [String: Any] = [:],
+                               callback: ((Any?) -> Void)? = nil){
+        guard let url = URL(string: path), let urlScheme = url.scheme else { return }
+        
+        var routerModel: AnyClass? = routers[urlScheme]
+        
+        if let _ = routerModel {
+            
+        }else{
+            let path = path.components(separatedBy: "?").first ?? ""
+            routerModel = routers[path]
+        }
+        
+        let completion = callback ?? { _ in }
+        
+        if let cls = routerModel, let routable = cls as? Routable.Type {
+            routable.callStaticFunc(params: params, callback: completion)
+        }
+    }
 }
 
 extension Router {
@@ -70,7 +129,7 @@ extension Router {
                      params: [String: Any]? = [:],
                      fromVC: UIViewController? = nil,
                      animated: Bool = true) {
-        guard let routable = getRoutable(path, params: params) as? UIViewController else {
+        guard let routable = getRoutableVC(path, params: params) as? UIViewController else {
             return
         }
         routable.hidesBottomBarWhenPushed = true
@@ -87,7 +146,7 @@ extension Router {
         guard let nav = UIViewController.currentNavigationController() else { return }
         nav.popViewController(animated: animated)
     }
- 
+    
     /// The current UINavigationController pop to the Root page
     /// - Parameter animated: animated
     public func popToRoot(animated: Bool = true){
@@ -110,7 +169,7 @@ extension Router {
                         modelStyle: UIModalPresentationStyle = .fullScreen,
                         animated: Bool = true) {
         
-        guard let routable = getRoutable(path, params: params) as? UIViewController else {
+        guard let routable = getRoutableVC(path, params: params) as? UIViewController else {
             return
         }
         var container = routable
@@ -119,9 +178,9 @@ extension Router {
             let nav = UINavigationController(rootViewController: container)
             container = nav
         }
- 
+        
         container.modalPresentationStyle = modelStyle
- 
+        
         guard let from = fromVC else {
             UIViewController.currentViewController()?.present(container, animated: animated, completion: nil)
             return
@@ -148,7 +207,7 @@ extension Router {
     public func open(_ urlString: String) {
         
         guard let url = URL(string: urlString) else { return }
-        guard let routable = getRoutable(urlString, params: url.urlParameters) else {
+        guard let routable = getRoutableVC(urlString, params: url.urlParameters) else {
             return
         }
         routable.openRouter(path: urlString)

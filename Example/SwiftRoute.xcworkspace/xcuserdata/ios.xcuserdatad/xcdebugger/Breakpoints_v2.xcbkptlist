@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "2511627F-0EF6-4CD0-AE4F-1B1A083C78DC"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C659988F-3544-426A-AD92-A352E4C4CC5A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/SwiftRoute/Protocol/Routable.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "openRouter(path:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C659988F-3544-426A-AD92-A352E4C4CC5A - 410288f0b6f5d745"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftRoute.Routable.openRouter(path: Swift.String) -&gt; ()"
+                  moduleName = "SwiftRoute"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ios/Documents/GitHub/SwiftRoute/Sources/SwiftRoute/Protocol/Routable.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "3836">
+               </Location>
+               <Location
+                  uuid = "C659988F-3544-426A-AD92-A352E4C4CC5A - 410288f0b6f5d764"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftRoute.Routable.openRouter(path: Swift.String) -&gt; ()"
+                  moduleName = "SwiftRoute"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ios/Documents/GitHub/SwiftRoute/Sources/SwiftRoute/Protocol/Routable.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "3836">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
