@@ -55,7 +55,7 @@ class TestAViewController: ViewController {
             btn.setTitle("Close page", for: .normal)
             btn.addTouchUpInSideBtnAction { _ in
                 
-                Router.shared.dismissVC()
+                Router.dismissVC()
             }
         }
         view.addSubview(button)
@@ -70,6 +70,7 @@ class TestAViewController: ViewController {
 }
 
 extension TestAViewController: Routable {
+
     static func callStaticFunc(params: [String : Any], callback: (Any?) -> Void) {
         debugPrint("1212")
         callback("111")
@@ -84,7 +85,7 @@ extension TestAViewController: Routable {
     
 
     // 返回一个路由协议的实例
-    static func initVC(params: [String : Any]) -> Routable {
+    static func inits(params: [String : Any]) -> Routable {
         let vc = TestAViewController()
         vc.dic = params
         return vc

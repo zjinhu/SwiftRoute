@@ -22,6 +22,7 @@ class ViewController: UIViewController {
             view.addSubview(controller.view)
             controller.didMove(toParent: self)
             
+            debugPrint("\(ViewController.self)")
         }
     }
 

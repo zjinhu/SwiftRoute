@@ -54,7 +54,7 @@ class TestBViewController: ViewController {
             btn.setTitle("Close page", for: .normal)
             btn.addTouchUpInSideBtnAction { _ in
                 
-                Router.shared.dismissVC()
+                Router.dismissVC()
             }
         }
         view.addSubview(button)
@@ -82,7 +82,7 @@ extension TestBViewController: Routable {
     
 
     // 返回一个路由协议的实例
-    static func initVC(params: [String : Any]) -> Routable {
+    static func inits(params: [String : Any]) -> Routable {
         let vc = TestBViewController()
         vc.dic = params
         return vc

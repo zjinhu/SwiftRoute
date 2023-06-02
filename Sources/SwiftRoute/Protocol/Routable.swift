@@ -12,8 +12,8 @@ public protocol Routable{
     /// Initialize the current class
     /// - Parameter params: Parameters required to create UIViewController
     /// - Returns: protocol type
-    static func initVC(params: [String: Any]) -> Routable
-
+    static func inits(params: [String: Any]) -> Routable
+ 
     /// Custom route handling
     /// - Parameter path: registered path
     func openRouter(path: String)
@@ -40,15 +40,15 @@ public extension Routable {
  
         switch url.scheme {
         case "push":
-            Router.shared.push(path, params: url.urlParameters)
+            Router.push(path, params: url.urlParameters)
         case "present":
             if #available(iOS 13.0, *) {
-                Router.shared.present(path, params: url.urlParameters, modelStyle: .automatic)
+                Router.present(path, params: url.urlParameters, modelStyle: .automatic)
             } else {
-                Router.shared.present(path, params: url.urlParameters, modelStyle: .fullScreen)
+                Router.present(path, params: url.urlParameters, modelStyle: .fullScreen)
             }
         case "fullScreen":
-            Router.shared.present(path, params: url.urlParameters, modelStyle: .fullScreen)
+            Router.present(path, params: url.urlParameters, modelStyle: .fullScreen)
         default:
             let safariController = SFSafariViewController(url: URL(string: path)!)
             UIViewController.currentViewController()?.present(safariController, animated: true, completion: nil)

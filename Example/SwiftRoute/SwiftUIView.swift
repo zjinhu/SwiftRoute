@@ -14,7 +14,7 @@ struct SwiftUIView: View {
         List {
             Section {
                 Button("OpenURL") {
-                    Router.shared.open("push://xxx")
+                    Router.open("push://xxx")
                 }
                 
             } header: {
@@ -23,7 +23,7 @@ struct SwiftUIView: View {
             
             Section {
                 Button("Push") {
-                    Router.shared.push("push://xxx")
+                    Router.push("push://xxx")
                 }
  
             } header: {
@@ -32,7 +32,7 @@ struct SwiftUIView: View {
             
             Section {
                 Button("Present") {
-                    Router.shared.present("push://xxx")
+                    Router.present("push://xxx")
                 }
  
             } header: {
@@ -42,7 +42,7 @@ struct SwiftUIView: View {
             Section {
 
                 Button("callInstanceFunc") {
-                    Router.shared.callInstanceFunc("push://xxx", params: ["papa": "haha"]) { str in
+                    Router.callInstanceFunc("push://xxx", funcParams: ["papa": "haha"]) { str in
                         debugPrint("\(String(describing: str))")
                         Dispatch.main().after(2, closure: {
                             Show.toast("接收到闭包返回参数\(String(describing: str))")
@@ -51,7 +51,7 @@ struct SwiftUIView: View {
                 }
                 
                 Button("callInstanceFunc") {
-                    Router.shared.callInstanceFunc("push://xxx", params: ["kaka": "haha"])
+                    Router.callInstanceFunc("push://xxx", funcParams: ["kaka": "haha"])
                 }
                 
             } header: {
@@ -61,7 +61,7 @@ struct SwiftUIView: View {
             Section {
 
                 Button("callInstanceFunc") {
-                    Router.shared.callStaticFunc("push://xxx", params: ["jaja": "haha"]) { str in
+                    Router.callStaticFunc("push://xxx", params: ["jaja": "haha"]) { str in
                         debugPrint("\(String(describing: str))")
                         Dispatch.main().after(2, closure: {
                             Show.toast("接收到闭包返回参数\(String(describing: str))")
@@ -70,7 +70,7 @@ struct SwiftUIView: View {
                 }
                 
                 Button("callInstanceFunc") {
-                    Router.shared.callStaticFunc("push://xxx", params: ["lala": "haha"])
+                    Router.callStaticFunc("push://xxx", params: ["lala": "haha"])
                 }
                 
             } header: {
